@@ -5,6 +5,11 @@ import argparse
 from utils import *
 
 
+def display_clusters(cluster_metrics):
+    max_severity_clusters, min_severity_clusters, max_severity, min_severity, avg_severity = cluster_metrics
+    pass
+
+
 def calc_severity_cluster(cluster, thresh):
     grades = {'JOM': 1, 'JOL': 2, 'JOMD': 1, 'JOLD': 2, 'JSM': 1, 'JSL': 2, 'JAM': 1, 'JAL': 2, 'X': 5, 'BSV': 5, 'BVV': 5, 'DR': 5, 'DFBR': 5, 'DFBI': 5, 'DFC': 5, 'DFE': 5, 'DTBR': 5, 'DTBI': 5, 'HSV': 5, 'HVV': 5, 'FL': 3, 'FC': 2, 'FM': 4, 'FS': 3, 'FH2': 4, 'FH3': 5, 'FH4': 5, 'CL': 2, 'CC': 1, 'CM': 3, 'CS': 2, 'CH2': 4, 'CH3': 5, 'CH4': 5}
 
@@ -49,7 +54,7 @@ def calc_severity_clusters(clusters, thresh, max_cluster_len):  # Calculate max,
 
             avg_severity[cluster_length] += cluster_severity / len(clusters)
 
-    return max_severity_clusters, min_severity_clusters, max_severity, min_severity, avg_severity
+    return [max_severity_clusters, min_severity_clusters, max_severity, min_severity, avg_severity]
 
 
 def calculate_num_clusters(clusters):
@@ -136,7 +141,9 @@ def main():
     df_counts = count_defects(df_cond)
     clusters = identify_clusters(df_cond, int(args.thresh))
     num_clusters, max_cluster_len = calculate_num_clusters(clusters)
-    max_severity_clusters, min_severity_clusters, max_severity, min_severity, avg_severity = calc_severity_clusters(clusters, int(args.thresh), max_cluster_len)
+    cluster_metrics = calc_severity_clusters(clusters, int(args.thresh), max_cluster_len)
+    # TODO: Visualize defect cluster metrics
+    display_clusters(cluster_metrics)
     print(min_severity)
 
 
