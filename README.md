@@ -17,7 +17,9 @@ Thus, this project presents a methodology for assessing pipe condition by consid
 
 Both techniques have been developed to work with sewer inspection databases that are in the NASSCO PACP format (see image below). Since most municipalities in the US adopt the NASSCO PACP format, the methodologies described can be directly applied to existing sewer pipe condition databases.
 
-![alt text](https://github.com/hamsterhooey/sewer_defect_cluster_analysis/blob/master/images/sample_pacp.png)
+<p align="center"> 
+<img src="https://github.com/hamsterhooey/sewer_defect_cluster_analysis/blob/master/images/sample_pacp.png" width="480">
+</p>
 
 ### Defect Cluster Identification
 
@@ -34,28 +36,6 @@ python association_rule_mining.py --cond_db "data/PACP_databases/Conditions.csv"
 
 Note: the PACP database must be in .csv format. We are currently the algorithm to directly read MS Access databases.
 
-
-![alt text](https://github.com/hamsterhooey/CCTV_Orientation_Recognition/blob/master/images/Step%202.jpg)
-
-### Inference on videos to detect joint and vanishing points
-
-We then run the inference script located in the "models" folder, to load the frozen tensorflow model and process frames of an input video.
-
-![alt text](https://github.com/hamsterhooey/CCTV_Orientation_Recognition/blob/master/images/Step%203.jpg)
-
-### Example Usage
-
-```
-python annotate_videos.py --media_db "data/video_databases/Media_Inspections.csv" --cond_db "data/video_databases/Conditions.csv" --video_path "data/video_files/3.MPG"
-```
-```
-python extract_images.py --video_dir "data/video_files" --output_dir "data/extracted_labeled_images" --num_frames 10
-```
-
-### Prerequisites
-
-Tested using opencv3.4.2
-
-## Authors
+## Author
 
 * **Srinath Shiv Kumar** - [hamsterhooey](https://github.com/hamsterhooey)
