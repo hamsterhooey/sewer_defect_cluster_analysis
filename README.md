@@ -24,18 +24,21 @@ Both techniques have been developed to work with sewer inspection databases that
 ### Defect Cluster Identification
 
 Example usage:
+
 ```
 python defect_cluster_identifier.py --cond_db "data/PACP_databases/Conditions.csv" --defect_category "structural" --thresh 3
 ```
+
 ### Association Rule Mining
 
 Example usage:
+
 ```
 python association_rule_mining.py --cond_db "data/PACP_databases/Conditions.csv" --defect_category "structural" --min_support 0.001 --min_confidence 0.4
 ```
 
-Note: the PACP database must be in .csv format. We are currently the algorithm to directly read MS Access databases.
+Note: the PACP database must be in .csv format. We are currently updating the algorithm to directly read MS Access databases.
 
 ## Author
 
-* **Srinath Shiv Kumar** - [hamsterhooey](https://github.com/hamsterhooey)
+- **Srinath Shiv Kumar** - [hamsterhooey](https://github.com/hamsterhooey)
