@@ -26,7 +26,7 @@ Both techniques have been developed to work with sewer inspection databases that
 Example usage:
 
 ```
-python defect_cluster_identifier.py --cond_db "data/PACP_databases/Conditions.csv" --defect_category "structural" --thresh 3
+python defect_cluster_identifier.py --cond_db "data/PACP_databases/Conditions_Hazen_Sawyer.csv" --defect_category "structural" --num_defects_thresh 3
 ```
 
 ### Association Rule Mining
