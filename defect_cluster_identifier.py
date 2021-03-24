@@ -379,6 +379,6 @@ if __name__ == "__main__":
 """
 Example usage:
 
-python defect_cluster_identifier.py --cond_db "data/PACP_databases/Conditions_Hazen_Sawyer.csv" --defect_category "structural" --thresh 3
+python defect_cluster_identifier.py --cond_db "data/PACP_databases/Conditions_SAI.csv" --defect_category "structural" --thresh 3
 
 """
